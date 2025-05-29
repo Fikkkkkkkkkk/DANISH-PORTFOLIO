@@ -4,102 +4,388 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Photography Learning Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/WEDDING/HRL07404.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--bs-warning);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+    .scroll-to-top.show {
+      opacity: 1;
+    }
+  </style>
 </head>
-<body>
-  <div class="hero">
-    <div class="hero-content">
-      <h1 class="fade-in">Photography Learning Journey</h1>
-      <p class="fade-in delay">Explore different photography techniques and styles</p>
-      <a href="#portfolio" class="cta-button fade-in delay-2">View Examples</a>
-    </div>
-  </div>
-
-  <header>
-    <div class="header-container">
-      <a href="#" class="logo">
-        <img src="logos/logo.png" alt="Photography Portfolio Logo" class="logo-img">
-        <span class="logo-text">MHDNHNNY</span>
+<body class="bg-dark">
+  <header class="bg-dark bg-opacity-75 sticky-top shadow-sm py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="#" class="d-flex align-items-center text-decoration-none text-white">
+        <img src="logos/logo.png" alt="Photography Portfolio Logo" class="me-2" style="width:32px;height:32px;">
+        <span class="fs-4 fw-bold">MHDNHNNY</span>
       </a>
-      <button class="hamburger" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="navbar-toggler d-lg-none border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <nav class="collapse navbar-collapse flex-grow-0" id="mainNav">
+        <ul class="navbar-nav flex-row gap-3">
+          <li class="nav-item"><a class="nav-link text-white fw-medium" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-medium" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-medium" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section id="about" class="section">
-    <h2>About This Portfolio</h2>
-    <p>This portfolio showcases various photography techniques and styles to help you learn and understand different aspects of photography. Each category demonstrates specific skills and concepts that are essential for photographers of all levels.</p>
+  <div class="hero">
+    <div class="container">
+      <h1 class="display-1 fw-bold mb-3">Photography Learning Journey</h1>
+      <p class="lead mb-4">Explore different photography techniques and styles</p>
+      <a href="#biodata" class="btn btn-warning btn-lg px-4 py-2">Start</a>
+    </div>
+  </div>
+
+  <section id="about" class="container py-5">
+    <h2 class="text-center mb-4 text-white">About This Portfolio</h2>
+    <p class="lead text-center text-white-50">This portfolio showcases various photography techniques and styles to help you learn and understand different aspects of photography. Each category demonstrates specific skills and concepts that are essential for photographers of all levels.</p>
   </section>
 
-  <section id="gallery" class="section">
-    <h2>Photo Gallery</h2>
-    <div class="gallery-categories">
-      <div class="category-dropdown">
-        <button class="category-dropdown-btn">
-          <span>All Categories</span>
-          <img src="icons/arrow-down.svg" alt="Dropdown" class="dropdown-icon">
-        </button>
-        <div class="category-dropdown-content">
-          <button class="category-btn active" data-category="all">All</button>
-          <button class="category-btn" data-category="landscape">Landscape</button>
-          <button class="category-btn" data-category="wedding">Wedding</button>
-          <button class="category-btn" data-category="product">Product</button>
-          <button class="category-btn" data-category="poster">Poster</button>
+  <!-- Biodata Section -->
+  <section id="biodata" class="container py-5">
+    <h2 class="text-center mb-4 text-white">Biodata</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="bg-dark bg-opacity-75 p-4 rounded-3">
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <img src="images/profile.jpg" alt="Profile Picture" class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
+            </div>
+            <div class="col-md-8">
+              <h3 class="text-warning mb-3">Muhammad Danish bin ?....</h3>
+              <ul class="list-unstyled text-white-50">
+                <li class="mb-2"><i class="bi bi-mortarboard-fill me-2"></i>Degree in Photography</li>
+                <li class="mb-2"><i class="bi bi-building me-2"></i>Universiti Kuala Lumpur (UniKL)</li>
+                <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>Kuala Lumpur, Malaysia</li>
+                <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>muhdanishcr@gmail.com</li>
+                <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+60 19-313 0125</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="gallery-grid">
-      <!-- Gallery items will be populated by JavaScript -->
+  </section>
+
+  <!-- Case Study Section -->
+  <section id="case-study" class="container py-5">
+    <h2 class="text-center mb-4 text-white">Case Study</h2>
+    <div class="row g-4">
+      <!-- Wedding Photography Case Study -->
+      <div class="col-md-6">
+        <div class="bg-dark bg-opacity-75 p-4 rounded-3 h-100">
+          <h3 class="text-warning mb-3">Wedding Photography</h3>
+          <p class="text-white-50">A comprehensive study of wedding photography techniques, including:</p>
+          <ul class="text-white-50">
+            <li>Pre-wedding shoots</li>
+            <li>Ceremony coverage</li>
+            <li>Portrait photography</li>
+            <li>Event documentation</li>
+          </ul>
+          <a href="#gallery" class="btn btn-warning mt-3">View Gallery</a>
+        </div>
+      </div>
+      <!-- Landscape Photography Case Study -->
+      <div class="col-md-6">
+        <div class="bg-dark bg-opacity-75 p-4 rounded-3 h-100">
+          <h3 class="text-warning mb-3">Landscape Photography</h3>
+          <p class="text-white-50">An exploration of landscape photography, covering:</p>
+          <ul class="text-white-50">
+            <li>Composition techniques</li>
+            <li>Lighting conditions</li>
+            <li>Equipment selection</li>
+            <li>Post-processing</li>
+          </ul>
+          <a href="#gallery" class="btn btn-warning mt-3">View Gallery</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="contact-container">
-      <div class="contact-form-wrapper">
-        <form id="contact-form">
-          <input type="text" id="name" name="name" placeholder="Name" required/>
-          <input type="email" id="email" name="email" placeholder="Email" required/>
-          <textarea id="message" name="message" placeholder="Ask about photography techniques or request a workshop" required></textarea>
-          <button type="submit">Send</button>
-        </form>
+  <!-- Skills Section -->
+  <section id="skills" class="container py-5">
+    <h2 class="text-center mb-4 text-white">Skills & Expertise</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="bg-dark bg-opacity-75 p-4 rounded-3 text-center h-100">
+          <i class="bi bi-camera-fill text-warning display-4 mb-3"></i>
+          <h3 class="text-warning h4">Photography</h3>
+          <p class="text-white-50">Expert in various photography styles including wedding, landscape, and portrait photography.</p>
+        </div>
       </div>
-      <div class="contact-details">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>Have questions about photography techniques or interested in workshops? I'm here to help!</p>
-          <ul class="contact-methods">
-            <li>
-              <img src="icons/email-icon.svg" alt="Email" class="contact-icon">
+      <div class="col-md-4">
+        <div class="bg-dark bg-opacity-75 p-4 rounded-3 text-center h-100">
+          <i class="bi bi-palette-fill text-warning display-4 mb-3"></i>
+          <h3 class="text-warning h4">Photo Editing</h3>
+          <p class="text-white-50">Proficient in Adobe Photoshop and Lightroom for professional photo editing and enhancement.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-dark bg-opacity-75 p-4 rounded-3 text-center h-100">
+          <i class="bi bi-layout-text-window-reverse text-warning display-4 mb-3"></i>
+          <h3 class="text-warning h4">Design</h3>
+          <p class="text-white-50">Skilled in creating magazine layouts, brochures, and digital content design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION (DYNAMIC, BOOTSTRAP ONLY) -->
+  <section id="gallery" class="py-5 bg-dark text-light">
+    <div class="container">
+      <h2 class="text-center mb-5 text-white">Photo Gallery</h2>
+      
+      <!-- Gallery Navigation -->
+      <ul class="nav nav-pills nav-fill mb-4 flex-wrap" id="galleryTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active text-white" id="wedding-tab" data-bs-toggle="pill" data-bs-target="#wedding" type="button" role="tab">Wedding</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="landscape-tab" data-bs-toggle="pill" data-bs-target="#landscape" type="button" role="tab">Landscape</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="poster-tab" data-bs-toggle="pill" data-bs-target="#poster" type="button" role="tab">Poster</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="photojournalism-tab" data-bs-toggle="pill" data-bs-target="#photojournalism" type="button" role="tab">Photojournalism</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="restoration-tab" data-bs-toggle="pill" data-bs-target="#restoration" type="button" role="tab">Photo Restoration</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="colorized-tab" data-bs-toggle="pill" data-bs-target="#colorized" type="button" role="tab">Colorized</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="scanography-tab" data-bs-toggle="pill" data-bs-target="#scanography" type="button" role="tab">Scanography</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="fyp-minor-tab" data-bs-toggle="pill" data-bs-target="#fyp-minor" type="button" role="tab">FYP Minor</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="fyp-major-tab" data-bs-toggle="pill" data-bs-target="#fyp-major" type="button" role="tab">FYP Major</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="designing-tab" data-bs-toggle="pill" data-bs-target="#designing" type="button" role="tab">Designing</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-white" id="magazine-tab" data-bs-toggle="pill" data-bs-target="#magazine" type="button" role="tab">Magazine & Layout</button>
+        </li>
+      </ul>
+
+      <!-- Gallery Content -->
+      <div class="tab-content" id="galleryTabContent">
+        <!-- Wedding Gallery -->
+        <div class="tab-pane fade show active" id="wedding" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/1.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/3.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/6.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/7.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/8.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/93.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/HRL07294.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/HRL07404.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9075.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9076.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9080.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9081.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9083.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9086.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9087.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9088.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9102.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9138.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9221.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9222.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/WEDDING/IMG_9224.JPG" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Wedding"></div>
+          </div>
+        </div>
+
+        <!-- Landscape Gallery -->
+        <div class="tab-pane fade" id="landscape" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/LANDSCAPE/IMG_0634.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Landscape"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/LANDSCAPE/IMG_0723.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Landscape"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/LANDSCAPE/IMG_0768.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Landscape"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/LANDSCAPE/IMG_1300.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Landscape"></div>
+          </div>
+        </div>
+
+        <!-- Poster Gallery -->
+        <div class="tab-pane fade" id="poster" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/POSTER/430a3261-5ae2-4053-ad7a-3007bbfaba8d-0.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Poster"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/POSTER/430a3261-5ae2-4053-ad7a-3007bbfaba8d-1.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Poster"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/POSTER/430a3261-5ae2-4053-ad7a-3007bbfaba8d-2.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Poster"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/POSTER/ADVERTISING POSTER - KTMB.jpg" class="img-fluid rounded shadow-sm w-100 h-100 object-fit-cover" alt="Poster"></div>
+          </div>
+        </div>
+
+        <!-- Photojournalism Gallery -->
+        <div class="tab-pane fade" id="photojournalism" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/PHOTOJOURNALISM/Documentary (photo essay).jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Photojournalism"></div>
+          </div>
+        </div>
+
+        <!-- Photo Restoration Gallery -->
+        <div class="tab-pane fade" id="restoration" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/PHOTO RESTORATION/Photo Restoration.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Photo Restoration"></div>
+          </div>
+        </div>
+
+        <!-- Colorized Gallery -->
+        <div class="tab-pane fade" id="colorized" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/COLORIZED/Colorized.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Colorized"></div>
+          </div>
+        </div>
+
+        <!-- Scanography Gallery -->
+        <div class="tab-pane fade" id="scanography" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/SCANOGRAPHY/035df7a7-6fa6-474d-9c09-424460c47792-0.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Scanography"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/SCANOGRAPHY/035df7a7-6fa6-474d-9c09-424460c47792-1.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Scanography"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/SCANOGRAPHY/035df7a7-6fa6-474d-9c09-424460c47792-2.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Scanography"></div>
+          </div>
+        </div>
+
+        <!-- FYP Minor Gallery -->
+        <div class="tab-pane fade" id="fyp-minor" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/Documentary (photo essay).jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_0917.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_0929.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_0980.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_0996.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1039.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1121.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1133.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1144.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1335.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1337.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1353.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/IMG_1362.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/FYP MINOR/KLPF Photojourn layout_page-0001.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="FYP Minor"></div>
+          </div>
+        </div>
+
+        <!-- FYP Major Gallery -->
+        <div class="tab-pane fade" id="fyp-major" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_0416.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_0418.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_0529.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_0591.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_0669.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1258.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1384.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1393.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1402.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1409.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1424.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1468.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1484.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+            <div class="col-6 col-md-4 col-lg-3"><img src="images/DIPLOMA FYP MAJOR/IMG_1503.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Diploma FYP Major"></div>
+          </div>
+        </div>
+
+        <!-- Designing Gallery -->
+        <div class="tab-pane fade" id="designing" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/COLORING & DESIGNING/Coloring and designing car_page-0001.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Coloring & Designing"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/LAYOUT WEBSITE/Assignment2 - Layout for website 2.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Layout Website"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/LAYOUT WEBSITE/Assignment2 - Layout for website.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Layout Website"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/BROCHURE/Brochure inside.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Brochure"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/BROCHURE/Brochure outside.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Brochure"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/SURREALISM/Surrealism Final.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Surrealism"></div>
+          </div>
+        </div>
+
+        <!-- Magazine & Layout Gallery -->
+        <div class="tab-pane fade" id="magazine" role="tabpanel">
+          <div class="row g-3 masonry-grid">
+            <!-- E MAGAZINE -->
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/E MAGAZINE/Assignment3 - E-magazine.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="E Magazine"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/E MAGAZINE/Asssignment3 - E-Magazines page 2.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="E Magazine"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/E MAGAZINE/Assignment3 - E-magazine page 3.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="E Magazine"></div>
+            <!-- MAGAZINE COVER -->
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/MAGAZINE COVER/Magazine Cover.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Magazine Cover"></div>
+            <!-- NEWSPAPER LAYOUT -->
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/NEWSPAPER LAYOUT/1.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Newspaper Layout"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/NEWSPAPER LAYOUT/2.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Newspaper Layout"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/NEWSPAPER LAYOUT/3.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Newspaper Layout"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/NEWSPAPER LAYOUT/4.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Newspaper Layout"></div>
+            <div class="col-12 col-md-6 col-lg-4"><img src="images/MAGAZINE, COVER AND NEWSPAPER/NEWSPAPER LAYOUT/5.jpg" class="img-fluid rounded shadow-sm w-100 object-fit-cover" alt="Newspaper Layout"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-4 text-white">Contact</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="bg-dark bg-opacity-75 p-4 rounded-3">
+          <h3 class="mb-3 text-white">Get in Touch</h3>
+          <p class="text-white-50">Have questions about photography techniques or interested in workshops? I'm here to help!</p>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-center mb-3">
+              <i class="bi bi-envelope-fill text-warning fs-3 me-3"></i>
               <div>
-                <h4>Email</h4>
-                <a href="mailto:muhdanishcr@gmail.com">muhdanishcr@gmail.com</a>
+                <h4 class="mb-1 fs-6 text-white">Email</h4>
+                <a href="mailto:muhdanishcr@gmail.com" class="text-white-50 text-decoration-none">muhdanishcr@gmail.com</a>
               </div>
             </li>
-            <!-- <li>
-              <img src="icons/whatsapp-icon.svg" alt="WhatsApp" class="contact-icon">
+            <li class="d-flex align-items-center mb-3">
+              <i class="bi bi-whatsapp text-success fs-3 me-3"></i>
               <div>
-                <h4>WhatsApp</h4>
-                <a href="https://wa.me/60193130125">+60 19-313 0125</a>
+                <h4 class="mb-1 fs-6 text-white">WhatsApp</h4>
+                <a href="https://wa.me/60193130125" class="text-white-50 text-decoration-none">+60 19-313 0125</a>
               </div>
-            </li> -->
-            <li>
-              <img src="icons/phone-icon.svg" alt="Phone" class="contact-icon">
+            </li>
+            <li class="d-flex align-items-center">
+              <i class="bi bi-telephone-fill text-info fs-3 me-3"></i>
               <div>
-                <h4>Phone</h4>
-                <a href="tel:0193130125">+60 19-313 0125</a>
+                <h4 class="mb-1 fs-6 text-white">Phone</h4>
+                <a href="tel:0193130125" class="text-white-50 text-decoration-none">+60 19-313 0125</a>
               </div>
             </li>
           </ul>
@@ -108,44 +394,48 @@
     </div>
   </section>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <img src="logos/logo.png" alt="MHDNHNNY Logo" class="footer-logo">
-          <span class="brand-name">MHDNHNNY</span>
-        </div>
-        <!-- <p class="copyright">© 2024 MHDNHNNY. All rights reserved.</p> -->
+  <footer class="bg-dark bg-opacity-75 mt-5 py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div class="d-flex align-items-center gap-2 mb-2 mb-md-0">
+        <img src="logos/logo.png" alt="MHDNHNNY Logo" style="width:32px;height:32px;">
+        <span class="fw-semibold fs-5 text-white">MHDNHNNY</span>
       </div>
-      <div class="footer-right">
-        <p>Feel free to contact by clicking the icons below</p>
-        <ul class="social-links">
-          <li>
-            <a href="#" title="Instagram">
-              <img src="icons/instagram-icon.svg" alt="Instagram" class="social-icon">
-            </a>
-          </li>
-          <li>
-            <a href="mailto:muhdanishcr@gmail.com" title="Email">
-              <img src="icons/email-icon.svg" alt="Email" class="social-icon">
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/60193130125" title="WhatsApp">
-              <img src="icons/whatsapp-icon.svg" alt="WhatsApp" class="social-icon">
-            </a>
-          </li>
-          <li>
-            <a href="tel:0193130125" title="Phone">
-              <img src="icons/phone-icon.svg" alt="Phone" class="social-icon">
-            </a>
-          </li>
+      <div class="text-md-end text-center">
+        <p class="mb-2 text-white-50">Feel free to contact by clicking the icons below</p>
+        <ul class="list-unstyled d-flex justify-content-md-end justify-content-center gap-3 mb-0">
+          <li><a href="#" title="Instagram" class="text-warning fs-4"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="mailto:muhdanishcr@gmail.com" title="Email" class="text-warning fs-4"><i class="bi bi-envelope-fill"></i></a></li>
+          <li><a href="https://wa.me/60193130125" title="WhatsApp" class="text-warning fs-4"><i class="bi bi-whatsapp"></i></a></li>
+          <li><a href="tel:0193130125" title="Phone" class="text-warning fs-4"><i class="bi bi-telephone-fill"></i></a></li>
         </ul>
       </div>
     </div>
   </footer>
+
   <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
-    <img src="icons/arrow-up.svg" alt="Scroll to top" class="scroll-icon">
+    <i class="bi bi-arrow-up"></i>
   </button>
+
+  <!-- Bootstrap 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>
